@@ -46,6 +46,37 @@ int main()
         qDebug() << "verbosity: " << debug.verbosity();
         debug.resetFormat();
     }
+
+    /* Ex_2 */
+    {
+        qDebug() << "";
+        QString started("QDebug Ex_2");
+        qDebug() << "Started: " << started;
+
+        int a = 5;
+        int b = 10;
+
+        qDebug() << a << b;
+        qDebug().nospace() << "a: " << a << " b: " << b;
+        qDebug().maybeSpace() << a << b;
+        qDebug() << "------------------";
+        qDebug().maybeQuote() << a << b;
+        qDebug() << "------------------";
+        qDebug().quote() << QString("Quote Example");
+        qDebug() << "------------------";
+        qDebug().noquote() << QString("Quote Example");
+        qDebug() << "------------------";
+        QPoint point(5, 10);
+        qDebug() << point;
+        qDebug() << "------------------";
+        qDebug() << "Date:" << QDate::currentDate();
+        qDebug() << "Types:" << QString("String") << QChar('x') << QRect(0, 10, 50, 40);
+        qDebug() << "Custom coordinate type:" << point;
+        qDebug() << "------------------";
+        qDebug("Tester %d", 10);
+        qDebug() << "------------------";
+        
+    }
     
     return 0;
 }
