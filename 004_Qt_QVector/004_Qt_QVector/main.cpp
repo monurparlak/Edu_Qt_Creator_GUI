@@ -41,5 +41,57 @@ int main()
 
     }
 
+    /* Ex_2 : Move & Append */
+    {
+        qDebug() << "";
+        QString started("QVector Ex_2 : Move & Append");
+        qDebug() << "Started: " << started;
+
+        QVector<int> vectorVar;
+
+        for(int i = 0; i < 10; i ++)
+            vectorVar.append(i);
+
+        qDebug() << "-------------------";
+        qDebug() << "vectorVar: " << vectorVar;
+        qDebug() << "-------------------";
+
+        vectorVar.move(3,9);
+        qDebug() << "vectorVar: " << vectorVar;
+        qDebug() << "-------------------";
+    }
+
+    /* Ex_3 : at */
+    {
+        qDebug() << "";
+        QString started("QVector Ex_3 : at");
+        qDebug() << "Started: " << started;
+
+        QVector<int> vectorVar;
+
+        for(int i = 0; i < vectorVar.size(); i ++)
+            qDebug() << vectorVar.at(i);
+
+        for(int i = 0; i < vectorVar.size(); i ++)
+            qDebug() << "vectorVar: " << vectorVar[i];
+    }
+
+    /* Ex_4 :  */
+    {
+        qDebug() << "";
+        QString started("QVector Ex_4");
+        qDebug() << "Started: " << started;
+
+        QVector<int> vectorVar;
+
+        for(int i = 0; i < 10; i ++)
+            vectorVar.append(i);
+
+        vectorVar << 10 << 20 << 30;
+
+        qDebug() << vectorVar;
+        qDebug() << "-------------------";
+    }
+
     return 0;
 }
